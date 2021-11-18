@@ -2,6 +2,7 @@ package one.digitalinnovation.beerstocktestdemo.controller;
 
 import one.digitalinnovation.beerstocktestdemo.builder.BeerDTOBuilder;
 import one.digitalinnovation.beerstocktestdemo.dto.BeerDTO;
+import one.digitalinnovation.beerstocktestdemo.dto.QuantityDTO;
 import one.digitalinnovation.beerstocktestdemo.exception.BeerNotFoundException;
 import one.digitalinnovation.beerstocktestdemo.service.BeerService;
 import org.junit.jupiter.api.BeforeEach;
@@ -170,7 +171,7 @@ public class BeerControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-   /* @Test
+    @Test
     void whenPATCHIsCalledToIncrementDiscountThenOKstatusIsReturned() throws Exception {
         QuantityDTO quantityDTO = QuantityDTO.builder()
                 .quantity(10)
@@ -188,6 +189,6 @@ public class BeerControllerTest {
                 .andExpect(jsonPath("$.brand", is(beerDTO.getBrand())))
                 .andExpect(jsonPath("$.type", is(beerDTO.getType().toString())))
                 .andExpect(jsonPath("$.quantity", is(beerDTO.getQuantity())));
-    }*/
+    }
 
 }

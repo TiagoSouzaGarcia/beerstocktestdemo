@@ -5,6 +5,7 @@ import one.digitalinnovation.beerstocktestdemo.dto.BeerDTO;
 import one.digitalinnovation.beerstocktestdemo.entity.Beer;
 import one.digitalinnovation.beerstocktestdemo.exception.BeerAlreadyRegisteredException;
 import one.digitalinnovation.beerstocktestdemo.exception.BeerNotFoundException;
+import one.digitalinnovation.beerstocktestdemo.exception.BeerStockExceededException;
 import one.digitalinnovation.beerstocktestdemo.mapper.BeerMapper;
 import one.digitalinnovation.beerstocktestdemo.repository.BeerRepository;
 import org.junit.jupiter.api.Test;
@@ -152,7 +153,7 @@ public class BeerServiceTest {
         assertThrows(BeerNotFoundException.class, () -> beerService.deleteById(INVALID_BEER_ID));
     }
 
-    /*@Test
+    @Test
     void whenIncrementIsCalledThenIncrementBeerStock() throws BeerNotFoundException, BeerStockExceededException {
         //given
         BeerDTO expectedBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -201,5 +202,5 @@ public class BeerServiceTest {
         when(beerRepository.findById(INVALID_BEER_ID)).thenReturn(Optional.empty());
 
         assertThrows(BeerNotFoundException.class, () -> beerService.increment(INVALID_BEER_ID, quantityToIncrement));
-    }*/
+    }
 }
